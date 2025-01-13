@@ -4,6 +4,7 @@ final trainingData = [
     "trainingName": "Safe Scrum Master",
     "location": "West Des Moines, IA",
     "dates": "30 Oct - 31 Oct",
+    "time": "8:30 AM - 12:30 PM",
     "price": 825,
     "image":
         "https://static1.squarespace.com/static/63d40fe2cbd65e16cb8098b6/63e2d2cf2edb44507e95b25d/644ffdf91e515254225af03f/1682964153555/coding+classes+for+teens.jpeg?format=1500w",
@@ -11,7 +12,8 @@ final trainingData = [
       "name": "Helen Gribble",
       "experience": "10+ years",
       "specialization": "Agile and Scrum Coaching",
-      "rating": 4.8
+      "rating": 4.8,
+      "image": "https://pbs.twimg.com/profile_images/1249432648684109824/J0k1DN1T_400x400.jpg"
     },
     "tags": ["Filling Fast", "Early Bird Offer"],
     "rating": 4.6,
@@ -72,6 +74,7 @@ final trainingData = [
     "trainingName": "Agile Fundamentals",
     "location": "Chicago, IL",
     "dates": "12 Nov - 14 Nov",
+    "time": "8:30 AM - 12:30 PM",
     "price": 950,
     "image":
         "https://media.istockphoto.com/id/1363276509/photo/teacher-giving-computer-science-lecture-to-diverse-multiethnic-group-of-female-and-male.jpg?s=612x612&w=0&k=20&c=iHDI7pI98XJfh95nFw-wT9L9jYr0IzSBYB53riWOVsk=",
@@ -79,7 +82,9 @@ final trainingData = [
       "name": "John Doe",
       "experience": "8+ years",
       "specialization": "Agile Transformation",
-      "rating": 4.7
+      "rating": 4.7,
+      "image":
+          "https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
     },
     "tags": ["New"],
     "rating": 4.8,
@@ -142,13 +147,16 @@ final trainingData = [
     "trainingName": "DevOps Essentials",
     "location": "Austin, TX",
     "dates": "5 Dec - 6 Dec",
+    "time": "8:30 AM - 12:30 PM",
     "price": 875,
     "image": "https://www.techdonut.co.uk/sites/default/files/staffandittraining_71714338.jpg",
     "trainer": {
       "name": "Mary Wilson",
       "experience": "12+ years",
       "specialization": "DevOps and Continuous Integration",
-      "rating": 4.9
+      "rating": 4.9,
+      "image":
+          "https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww",
     },
     "tags": ["Popular", "Hands-On"],
     "rating": 4.9,
@@ -191,6 +199,7 @@ final trainingData = [
     "trainingName": "Data Science Bootcamp",
     "location": "San Francisco, CA",
     "dates": "20 Nov - 25 Nov",
+    "time": "8:30 AM - 12:30 PM",
     "price": 1200,
     "image":
         "https://www.bangaloretraininginstitute.com/wp-content/uploads/2021/01/shutterstock_285147194.jpg",
@@ -198,7 +207,9 @@ final trainingData = [
       "name": "Elena Martinez",
       "experience": "7+ years",
       "specialization": "Machine Learning and AI",
-      "rating": 4.9
+      "rating": 4.9,
+      "image":
+          "https://media.istockphoto.com/id/508956644/photo/pretty-colombian-woman.jpg?s=612x612&w=0&k=20&c=jEwTCMKSpjYsaSfiFIlifYneUpczureQFl8o543_ZjE=",
     },
     "tags": ["Popular", "New"],
     "rating": 4.9,

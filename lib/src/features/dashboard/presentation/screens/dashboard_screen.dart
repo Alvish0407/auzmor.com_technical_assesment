@@ -2,6 +2,8 @@ import 'package:auzmor_technical_assesment/src/features/dashboard/presentation/s
 import 'package:auzmor_technical_assesment/src/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 
+import 'components/trainings_list_view.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -18,10 +20,13 @@ class DashboardScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          HighlightCarousel(),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            HighlightCarousel(),
+            Expanded(child: TrainingsListView()),
+          ],
+        ),
       ),
     );
   }

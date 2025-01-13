@@ -24,6 +24,7 @@ mixin _$Training {
   String get trainingName => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get dates => throw _privateConstructorUsedError;
+  String get time => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   Trainer get trainer => throw _privateConstructorUsedError;
@@ -55,6 +56,7 @@ abstract class $TrainingCopyWith<$Res> {
       String trainingName,
       String location,
       String dates,
+      String time,
       int price,
       String image,
       Trainer trainer,
@@ -89,6 +91,7 @@ class _$TrainingCopyWithImpl<$Res, $Val extends Training>
     Object? trainingName = null,
     Object? location = null,
     Object? dates = null,
+    Object? time = null,
     Object? price = null,
     Object? image = null,
     Object? trainer = null,
@@ -116,6 +119,10 @@ class _$TrainingCopyWithImpl<$Res, $Val extends Training>
       dates: null == dates
           ? _value.dates
           : dates // ignore: cast_nullable_to_non_nullable
+              as String,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -194,6 +201,7 @@ abstract class _$$TrainingImplCopyWith<$Res>
       String trainingName,
       String location,
       String dates,
+      String time,
       int price,
       String image,
       Trainer trainer,
@@ -228,6 +236,7 @@ class __$$TrainingImplCopyWithImpl<$Res>
     Object? trainingName = null,
     Object? location = null,
     Object? dates = null,
+    Object? time = null,
     Object? price = null,
     Object? image = null,
     Object? trainer = null,
@@ -255,6 +264,10 @@ class __$$TrainingImplCopyWithImpl<$Res>
       dates: null == dates
           ? _value.dates
           : dates // ignore: cast_nullable_to_non_nullable
+              as String,
+      time: null == time
+          ? _value.time
+          : time // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -308,6 +321,7 @@ class _$TrainingImpl implements _Training {
       required this.trainingName,
       required this.location,
       required this.dates,
+      required this.time,
       required this.price,
       required this.image,
       required this.trainer,
@@ -334,6 +348,8 @@ class _$TrainingImpl implements _Training {
   final String location;
   @override
   final String dates;
+  @override
+  final String time;
   @override
   final int price;
   @override
@@ -384,7 +400,7 @@ class _$TrainingImpl implements _Training {
 
   @override
   String toString() {
-    return 'Training(id: $id, trainingName: $trainingName, location: $location, dates: $dates, price: $price, image: $image, trainer: $trainer, rating: $rating, description: $description, locationDetails: $locationDetails, tags: $tags, schedule: $schedule, resources: $resources, testimonials: $testimonials)';
+    return 'Training(id: $id, trainingName: $trainingName, location: $location, dates: $dates, time: $time, price: $price, image: $image, trainer: $trainer, rating: $rating, description: $description, locationDetails: $locationDetails, tags: $tags, schedule: $schedule, resources: $resources, testimonials: $testimonials)';
   }
 
   @override
@@ -398,6 +414,7 @@ class _$TrainingImpl implements _Training {
             (identical(other.location, location) ||
                 other.location == location) &&
             (identical(other.dates, dates) || other.dates == dates) &&
+            (identical(other.time, time) || other.time == time) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.trainer, trainer) || other.trainer == trainer) &&
@@ -422,6 +439,7 @@ class _$TrainingImpl implements _Training {
       trainingName,
       location,
       dates,
+      time,
       price,
       image,
       trainer,
@@ -455,6 +473,7 @@ abstract class _Training implements Training {
       required final String trainingName,
       required final String location,
       required final String dates,
+      required final String time,
       required final int price,
       required final String image,
       required final Trainer trainer,
@@ -477,6 +496,8 @@ abstract class _Training implements Training {
   String get location;
   @override
   String get dates;
+  @override
+  String get time;
   @override
   int get price;
   @override
@@ -516,6 +537,7 @@ mixin _$Trainer {
   String get experience => throw _privateConstructorUsedError;
   String get specialization => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   /// Serializes this Trainer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -532,7 +554,11 @@ abstract class $TrainerCopyWith<$Res> {
       _$TrainerCopyWithImpl<$Res, Trainer>;
   @useResult
   $Res call(
-      {String name, String experience, String specialization, double rating});
+      {String name,
+      String experience,
+      String specialization,
+      double rating,
+      String image});
 }
 
 /// @nodoc
@@ -554,6 +580,7 @@ class _$TrainerCopyWithImpl<$Res, $Val extends Trainer>
     Object? experience = null,
     Object? specialization = null,
     Object? rating = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -572,6 +599,10 @@ class _$TrainerCopyWithImpl<$Res, $Val extends Trainer>
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -584,7 +615,11 @@ abstract class _$$TrainerImplCopyWith<$Res> implements $TrainerCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String name, String experience, String specialization, double rating});
+      {String name,
+      String experience,
+      String specialization,
+      double rating,
+      String image});
 }
 
 /// @nodoc
@@ -604,6 +639,7 @@ class __$$TrainerImplCopyWithImpl<$Res>
     Object? experience = null,
     Object? specialization = null,
     Object? rating = null,
+    Object? image = null,
   }) {
     return _then(_$TrainerImpl(
       name: null == name
@@ -622,6 +658,10 @@ class __$$TrainerImplCopyWithImpl<$Res>
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -633,7 +673,8 @@ class _$TrainerImpl implements _Trainer {
       {required this.name,
       required this.experience,
       required this.specialization,
-      required this.rating});
+      required this.rating,
+      required this.image});
 
   factory _$TrainerImpl.fromJson(Map<String, dynamic> json) =>
       _$$TrainerImplFromJson(json);
@@ -646,10 +687,12 @@ class _$TrainerImpl implements _Trainer {
   final String specialization;
   @override
   final double rating;
+  @override
+  final String image;
 
   @override
   String toString() {
-    return 'Trainer(name: $name, experience: $experience, specialization: $specialization, rating: $rating)';
+    return 'Trainer(name: $name, experience: $experience, specialization: $specialization, rating: $rating, image: $image)';
   }
 
   @override
@@ -662,13 +705,14 @@ class _$TrainerImpl implements _Trainer {
                 other.experience == experience) &&
             (identical(other.specialization, specialization) ||
                 other.specialization == specialization) &&
-            (identical(other.rating, rating) || other.rating == rating));
+            (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, experience, specialization, rating);
+      Object.hash(runtimeType, name, experience, specialization, rating, image);
 
   /// Create a copy of Trainer
   /// with the given fields replaced by the non-null parameter values.
@@ -691,7 +735,8 @@ abstract class _Trainer implements Trainer {
       {required final String name,
       required final String experience,
       required final String specialization,
-      required final double rating}) = _$TrainerImpl;
+      required final double rating,
+      required final String image}) = _$TrainerImpl;
 
   factory _Trainer.fromJson(Map<String, dynamic> json) = _$TrainerImpl.fromJson;
 
@@ -703,6 +748,8 @@ abstract class _Trainer implements Trainer {
   String get specialization;
   @override
   double get rating;
+  @override
+  String get image;
 
   /// Create a copy of Trainer
   /// with the given fields replaced by the non-null parameter values.

@@ -12,6 +12,7 @@ _$TrainingImpl _$$TrainingImplFromJson(Map<String, dynamic> json) =>
       trainingName: json['trainingName'] as String,
       location: json['location'] as String,
       dates: json['dates'] as String,
+      time: json['time'] as String,
       price: (json['price'] as num).toInt(),
       image: json['image'] as String,
       trainer: Trainer.fromJson(json['trainer'] as Map<String, dynamic>),
@@ -42,6 +43,7 @@ Map<String, dynamic> _$$TrainingImplToJson(_$TrainingImpl instance) =>
       'trainingName': instance.trainingName,
       'location': instance.location,
       'dates': instance.dates,
+      'time': instance.time,
       'price': instance.price,
       'image': instance.image,
       'trainer': instance.trainer,
@@ -60,6 +62,7 @@ _$TrainerImpl _$$TrainerImplFromJson(Map<String, dynamic> json) =>
       experience: json['experience'] as String,
       specialization: json['specialization'] as String,
       rating: (json['rating'] as num).toDouble(),
+      image: json['image'] as String,
     );
 
 Map<String, dynamic> _$$TrainerImplToJson(_$TrainerImpl instance) =>
@@ -68,6 +71,7 @@ Map<String, dynamic> _$$TrainerImplToJson(_$TrainerImpl instance) =>
       'experience': instance.experience,
       'specialization': instance.specialization,
       'rating': instance.rating,
+      'image': instance.image,
     };
 
 _$ScheduleImpl _$$ScheduleImplFromJson(Map<String, dynamic> json) =>

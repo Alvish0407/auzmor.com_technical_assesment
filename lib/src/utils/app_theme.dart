@@ -24,6 +24,7 @@ abstract class AppTheme {
       appBarTheme: AppBarTheme(
         centerTitle: false,
         backgroundColor: redColor,
+        surfaceTintColor: Colors.transparent,
         titleTextStyle: GoogleFonts.dmSerifText(
           fontSize: 26,
           letterSpacing: 2,

@@ -10,6 +10,7 @@ class Training with _$Training {
     required String trainingName,
     required String location,
     required String dates,
+    required String time,
     required int price,
     required String image,
     required Trainer trainer,
@@ -32,6 +33,7 @@ class Trainer with _$Trainer {
     required String experience,
     required String specialization,
     required double rating,
+    required String image,
   }) = _Trainer;
 
   factory Trainer.fromJson(Map<String, Object?> json) => //
