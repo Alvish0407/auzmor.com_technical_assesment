@@ -7,12 +7,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../domain/training_model.dart';
 
-class HighlightCarousal extends HookConsumerWidget {
-  const HighlightCarousal({super.key});
+class HighlightCarousel extends HookConsumerWidget {
+  const HighlightCarousel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final totalHeight = 300.0;
+    final totalHeight = 285.0;
 
     final carouselController = useMemoized(() => CarouselSliderController());
 
@@ -21,16 +21,7 @@ class HighlightCarousal extends HookConsumerWidget {
 
     return Stack(
       children: [
-        Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: totalHeight / 2,
-              color: context.colorScheme.primary,
-            ),
-            SizedBox(height: totalHeight / 2, width: double.infinity),
-          ],
-        ),
+        _carouselBackground(totalHeight, context),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -75,10 +66,57 @@ class HighlightCarousal extends HookConsumerWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 25),
+            _FilterButton(),
           ],
         ),
       ],
+    );
+  }
+
+  Column _carouselBackground(double totalHeight, BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          height: totalHeight / 2,
+          color: context.colorScheme.primary,
+        ),
+        Container(
+          color: Colors.white,
+          width: double.infinity,
+          height: totalHeight / 2,
+        ),
+      ],
+    );
+  }
+}
+
+class _FilterButton extends StatelessWidget {
+  const _FilterButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final color = Color.fromRGBO(191, 191, 191, 1);
+
+    return Container(
+      padding: EdgeInsets.all(4),
+      margin: EdgeInsets.only(left: 16),
+      decoration: BoxDecoration(
+        border: Border.all(color: color),
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.filter_list, size: 14, color: color),
+          SizedBox(width: 4),
+          Text(
+            "Filter",
+            style: context.textTheme.bodySmall?.copyWith(color: color),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -200,7 +238,7 @@ class HighlightCard extends StatelessWidget {
 
   Text _trainingPrice(BuildContext context) {
     return Text(
-      "\$${training.price * 1.1}",
+      "\$${(training.price * 1.1).toStringAsFixed(2)}",
       style: context.textTheme.bodySmall?.copyWith(
         fontWeight: FontWeight.w400,
         color: context.colorScheme.primary,

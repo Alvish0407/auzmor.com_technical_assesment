@@ -7,9 +7,9 @@ abstract class AppTheme {
 
     return ThemeData(
       useMaterial3: true,
-      cardColor: Colors.white,
       primaryColor: redColor,
-      scaffoldBackgroundColor: Colors.white,
+      cardColor: Colors.white,
+      scaffoldBackgroundColor: Color.fromRGBO(242, 242, 242, 1),
       colorScheme: ColorScheme.fromSeed(
         seedColor: redColor,
         primary: redColor,

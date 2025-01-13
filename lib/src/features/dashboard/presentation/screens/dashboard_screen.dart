@@ -20,7 +20,7 @@ class DashboardScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          HighlightCarousal(),
+          HighlightCarousel(),
         ],
       ),
     );
