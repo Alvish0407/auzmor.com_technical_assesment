@@ -33,3 +33,13 @@ Two general notes:
 - Download [fvm](https://fvm.app/) and follow the [instructions](https://fvm.app/documentation/guides/basic-commands#examples-1)
 <br>_**OR**_
 - Download the [flutter](https://docs.flutter.dev/release/archive) version 3.27.1
+
+
+## Features
+
+- [x] A swipe carousel to highlight training options.
+- [x] Filter functionality (location, training name, and trainer name).
+- [x] A vertically scrollable list of trainings.
+- [x] A detailed full-screen view for training information when clicked.
+
+That's it. Have fun!
