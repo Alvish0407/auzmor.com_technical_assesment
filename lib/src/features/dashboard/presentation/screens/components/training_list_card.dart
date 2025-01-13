@@ -4,6 +4,8 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../training_details/training_details_screen.dart';
+
 class TrainingListCard extends StatelessWidget {
   const TrainingListCard({
     super.key,
@@ -14,39 +16,49 @@ class TrainingListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 185,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(2),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 2,
-            offset: Offset(0, 2),
-            color: Colors.black12,
+    return InkWell(
+      onTap: () {
+        // Not using routing solutions like [go_router] or [auto_route] for simplicity
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => TrainingDetailsScreen(training: training),
           ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: _leftSideContent(context),
+        );
+      },
+      child: Container(
+        height: 185,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(2),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 2,
+              offset: Offset(0, 2),
+              color: Colors.black12,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: DottedLine(
-                direction: Axis.vertical,
-                dashColor: Color.fromRGBO(201, 201, 201, 1),
-              ),
-            ),
-            Expanded(
-              flex: 4,
-              child: _rightSideContent(context),
-            )
           ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: _leftSideContent(context),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: DottedLine(
+                  direction: Axis.vertical,
+                  dashColor: Color.fromRGBO(201, 201, 201, 1),
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: _rightSideContent(context),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -122,7 +134,7 @@ class TrainingListCard extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Enrol now",
+              "Enroll now",
               maxLines: 1,
               style: context.textTheme.labelLarge?.copyWith(
                 color: context.colorScheme.onPrimary,
