@@ -27,3 +27,9 @@ Two general notes:
 2. You will need to provide running instructions
 
 </details>
+
+
+## Prerequisite
+- Download [fvm](https://fvm.app/) and follow the [instructions](https://fvm.app/documentation/guides/basic-commands#examples-1)
+<br>_**OR**_
+- Download the [flutter](https://docs.flutter.dev/release/archive) version 3.27.1
