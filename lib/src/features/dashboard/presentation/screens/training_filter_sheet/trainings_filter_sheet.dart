@@ -2,6 +2,7 @@ import 'package:auzmor_technical_assesment/src/constants/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import 'components/trainer_name_filter_list.dart';
 import 'components/training_filter_sheet_header.dart';
 import 'components/training_filter_types_list.dart';
 import 'components/training_location_filter_list.dart';
@@ -36,7 +37,7 @@ class TrainingsFilterSheet extends HookWidget {
                   child: switch (selectedFilterType.value) {
                     TrainingsFilterType.location => TrainingLocationFilterList(),
                     TrainingsFilterType.trainingName => TrainingNameFilterList(),
-                    _ => TrainingNameFilterList(),
+                    TrainingsFilterType.trainer => TrainerNameFilterList(),
                   },
                 )
               ],
