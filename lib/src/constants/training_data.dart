@@ -13,7 +13,7 @@ final trainingData = [
       "experience": "10+ years",
       "specialization": "Agile and Scrum Coaching",
       "rating": 4.8,
-      "image": "https://pbs.twimg.com/profile_images/1249432648684109824/J0k1DN1T_400x400.jpg"
+      "image": "https://randomuser.me/api/portraits/men/40.jpg"
     },
     "tags": ["Filling Fast", "Early Bird Offer"],
     "rating": 4.6,
@@ -83,8 +83,7 @@ final trainingData = [
       "experience": "8+ years",
       "specialization": "Agile Transformation",
       "rating": 4.7,
-      "image":
-          "https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+      "image": "https://randomuser.me/api/portraits/men/44.jpg"
     },
     "tags": ["New"],
     "rating": 4.8,
@@ -208,8 +207,7 @@ final trainingData = [
       "experience": "7+ years",
       "specialization": "Machine Learning and AI",
       "rating": 4.9,
-      "image":
-          "https://media.istockphoto.com/id/508956644/photo/pretty-colombian-woman.jpg?s=612x612&w=0&k=20&c=jEwTCMKSpjYsaSfiFIlifYneUpczureQFl8o543_ZjE=",
+      "image": "https://randomuser.me/api/portraits/women/46.jpg",
     },
     "tags": ["Popular", "New"],
     "rating": 4.9,
