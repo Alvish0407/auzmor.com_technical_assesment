@@ -22,25 +22,39 @@ class TrainingsListView extends ConsumerWidget {
     final trainerNameFilters = ref.watch(selectedTrainerNamesFilterProvider);
 
     final filteredTrainings = trainings.where((training) {
-      final locationFilter = locationFilters.contains(training.location);
-      final trainingNameFilter = trainingNameFilters.contains(training.trainingName);
-      final trainerNameFilter = trainerNameFilters.contains(training.trainer.name);
+      final locationFilter = //
+          locationFilters.isEmpty || locationFilters.contains(training.location);
+
+      final trainingNameFilter =
+          trainingNameFilters.isEmpty || trainingNameFilters.contains(training.trainingName);
+
+      final trainerNameFilter =
+          trainerNameFilters.isEmpty || trainerNameFilters.contains(training.trainer.name);
 
       return locationFilter && trainingNameFilter && trainerNameFilter;
     }).toList();
 
-    return ListView.separated(
-      itemCount: filteredTrainings.length,
-      padding: EdgeInsets.all(16),
-      itemBuilder: (context, index) {
-        final training = filteredTrainings[index];
+    return filteredTrainings.isEmpty
+        ? Center(
+            child: Text(
+              "No trainings found",
+              style: context.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
+        : ListView.separated(
+            itemCount: filteredTrainings.length,
+            padding: EdgeInsets.all(16),
+            itemBuilder: (context, index) {
+              final training = filteredTrainings[index];
 
-        return TrainingCard(training: training);
-      },
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(height: 12);
-      },
-    );
+              return TrainingCard(training: training);
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return const SizedBox(height: 12);
+            },
+          );
   }
 }
 
