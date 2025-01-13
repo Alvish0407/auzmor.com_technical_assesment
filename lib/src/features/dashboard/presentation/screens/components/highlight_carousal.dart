@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../domain/training_model.dart';
+import '../training_filter_sheet/trainings_filter_sheet.dart';
 
 class HighlightCarousel extends HookConsumerWidget {
   const HighlightCarousel({super.key});
@@ -99,23 +100,31 @@ class _FilterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Color.fromRGBO(191, 191, 191, 1);
 
-    return Container(
-      padding: EdgeInsets.all(4),
-      margin: EdgeInsets.only(left: 16),
-      decoration: BoxDecoration(
-        border: Border.all(color: color),
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.filter_list, size: 14, color: color),
-          SizedBox(width: 4),
-          Text(
-            "Filter",
-            style: context.textTheme.bodySmall?.copyWith(color: color),
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (context) => TrainingsFilterSheet(),
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(4),
+        margin: EdgeInsets.only(left: 16),
+        decoration: BoxDecoration(
+          border: Border.all(color: color),
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.filter_list, size: 14, color: color),
+            SizedBox(width: 4),
+            Text(
+              "Filter",
+              style: context.textTheme.bodySmall?.copyWith(color: color),
+            ),
+          ],
+        ),
       ),
     );
   }

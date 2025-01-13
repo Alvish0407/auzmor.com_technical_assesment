@@ -17,6 +17,21 @@ class FakeTrainingDataSource extends ITrainingDataSource {
   List<Training> getTrainings() {
     return trainingData.map((e) => Training.fromJson(e)).toList();
   }
+
+  @override
+  List<String> getLocationsForFilter() {
+    return getTrainings().map((e) => e.location).toSet().toList();
+  }
+
+  @override
+  List<String> getTrainerNamesForFilter() {
+    return getTrainings().map((e) => e.trainer.name).toSet().toList();
+  }
+
+  @override
+  List<String> getTrainingNamesForFilter() {
+    return getTrainings().map((e) => e.trainingName).toSet().toList();
+  }
 }
 
 @riverpod

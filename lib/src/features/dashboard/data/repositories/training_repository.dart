@@ -19,6 +19,18 @@ class TrainingRepository {
   Future<List<Training>> getTrainings() async {
     return trainingDataSource.getTrainings();
   }
+
+  List<String> getLocationsForFilter() {
+    return trainingDataSource.getLocationsForFilter();
+  }
+
+  List<String> getTrainingNamesForFilter() {
+    return trainingDataSource.getTrainingNamesForFilter();
+  }
+
+  List<String> getTrainerNamesForFilter() {
+    return trainingDataSource.getTrainerNamesForFilter();
+  }
 }
 
 @riverpod

@@ -11,4 +11,16 @@ class Trainings extends _$Trainings {
   Future<List<Training>> build() async {
     return ref.watch(trainingRepositoryProvider).getTrainings();
   }
+
+  List<String> getLocationsForFilter() {
+    return ref.read(trainingRepositoryProvider).getLocationsForFilter();
+  }
+
+  List<String> getTrainingNamesForFilter() {
+    return ref.read(trainingRepositoryProvider).getTrainingNamesForFilter();
+  }
+
+  List<String> getTrainerNamesForFilter() {
+    return ref.read(trainingRepositoryProvider).getTrainerNamesForFilter();
+  }
 }
