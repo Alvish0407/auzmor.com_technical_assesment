@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'components/training_filter_sheet_header.dart';
 import 'components/training_filter_types_list.dart';
+import 'components/training_location_filter_list.dart';
 
 class TrainingsFilterSheet extends HookWidget {
   const TrainingsFilterSheet({super.key});
@@ -31,7 +32,7 @@ class TrainingsFilterSheet extends HookWidget {
                   ),
                 ),
                 Expanded(
-                  child: Container(),
+                  child: TrainingLocationFilterList(),
                 )
               ],
             ),

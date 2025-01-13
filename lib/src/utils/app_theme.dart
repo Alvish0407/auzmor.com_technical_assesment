@@ -32,6 +32,18 @@ abstract class AppTheme {
           fontWeight: FontWeight.w600,
         ),
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: TextStyle(color: Color.fromRGBO(205, 205, 205, 1)),
+        contentPadding: EdgeInsets.all(8),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Color.fromRGBO(229, 229, 229, 1)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: redColor),
+        ),
+      ),
     );
   }
 }

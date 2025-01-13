@@ -2,6 +2,7 @@ import 'package:auzmor_technical_assesment/src/features/dashboard/domain/trainin
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/repositories/training_repository.dart';
+import 'training_filters_providers.dart';
 
 part 'trainings_provider.g.dart';
 
@@ -9,18 +10,40 @@ part 'trainings_provider.g.dart';
 class Trainings extends _$Trainings {
   @override
   Future<List<Training>> build() async {
-    return ref.watch(trainingRepositoryProvider).getTrainings();
-  }
+    final locationFilters = ref.watch(selectedLocationsFilterProvider);
 
-  List<String> getLocationsForFilter() {
-    return ref.read(trainingRepositoryProvider).getLocationsForFilter();
-  }
+    final trainings = await ref.watch(trainingRepositoryProvider).getTrainings();
 
-  List<String> getTrainingNamesForFilter() {
-    return ref.read(trainingRepositoryProvider).getTrainingNamesForFilter();
-  }
+    return trainings.where((training) {
+      if (locationFilters.isNotEmpty) {
+        return locationFilters.contains(training.location);
+      }
 
-  List<String> getTrainerNamesForFilter() {
-    return ref.read(trainingRepositoryProvider).getTrainerNamesForFilter();
+      return true;
+    }).toList();
+  }
+}
+
+@riverpod
+class FilterLocations extends _$FilterLocations {
+  @override
+  Future<List<String>> build() async {
+    return ref.watch(trainingRepositoryProvider).getLocationsForFilter();
+  }
+}
+
+@riverpod
+class FilterTrainingNames extends _$FilterTrainingNames {
+  @override
+  Future<List<String>> build() async {
+    return ref.watch(trainingRepositoryProvider).getTrainingNamesForFilter();
+  }
+}
+
+@riverpod
+class FilterTrainerNames extends _$FilterTrainerNames {
+  @override
+  Future<List<String>> build() async {
+    return ref.watch(trainingRepositoryProvider).getTrainerNamesForFilter();
   }
 }
