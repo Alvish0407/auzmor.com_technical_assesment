@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../providers/training_filters_providers.dart';
 import '../../providers/trainings_provider.dart';
 
 class TrainingsListView extends ConsumerWidget {
@@ -15,11 +16,24 @@ class TrainingsListView extends ConsumerWidget {
     final trainingsAsync = ref.watch(trainingsProvider);
     final trainings = trainingsAsync.valueOrNull ?? [];
 
+    // Filters
+    final locationFilters = ref.watch(selectedLocationsFilterProvider);
+    final trainingNameFilters = ref.watch(selectedTrainingNamesFilterProvider);
+    final trainerNameFilters = ref.watch(selectedTrainerNamesFilterProvider);
+
+    final filteredTrainings = trainings.where((training) {
+      final locationFilter = locationFilters.contains(training.location);
+      final trainingNameFilter = trainingNameFilters.contains(training.trainingName);
+      final trainerNameFilter = trainerNameFilters.contains(training.trainer.name);
+
+      return locationFilter && trainingNameFilter && trainerNameFilter;
+    }).toList();
+
     return ListView.separated(
-      itemCount: trainings.length,
+      itemCount: filteredTrainings.length,
       padding: EdgeInsets.all(16),
       itemBuilder: (context, index) {
-        final training = trainings[index];
+        final training = filteredTrainings[index];
 
         return TrainingCard(training: training);
       },

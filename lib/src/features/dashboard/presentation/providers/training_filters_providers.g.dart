@@ -23,39 +23,39 @@ final selectedLocationsFilterProvider =
 );
 
 typedef _$SelectedLocationsFilter = AutoDisposeNotifier<List<String>>;
-String _$selectedTrainingNameFilterHash() =>
-    r'39442fed893c5d88088f4ad61aef493bde1b80a5';
+String _$selectedTrainingNamesFilterHash() =>
+    r'89ac5a880c6c442d1ede9296f29200cd130add02';
 
-/// See also [SelectedTrainingNameFilter].
-@ProviderFor(SelectedTrainingNameFilter)
-final selectedTrainingNameFilterProvider =
-    AutoDisposeNotifierProvider<SelectedTrainingNameFilter, String?>.internal(
-  SelectedTrainingNameFilter.new,
-  name: r'selectedTrainingNameFilterProvider',
+/// See also [SelectedTrainingNamesFilter].
+@ProviderFor(SelectedTrainingNamesFilter)
+final selectedTrainingNamesFilterProvider = AutoDisposeNotifierProvider<
+    SelectedTrainingNamesFilter, List<String>>.internal(
+  SelectedTrainingNamesFilter.new,
+  name: r'selectedTrainingNamesFilterProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$selectedTrainingNameFilterHash,
+      : _$selectedTrainingNamesFilterHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SelectedTrainingNameFilter = AutoDisposeNotifier<String?>;
-String _$selectedTrainerNameFilterHash() =>
-    r'44332ef1f5f88c716717496081df37de2275f7ca';
+typedef _$SelectedTrainingNamesFilter = AutoDisposeNotifier<List<String>>;
+String _$selectedTrainerNamesFilterHash() =>
+    r'e4d8c16f41aae639f23e327d87452a4b4deadb58';
 
-/// See also [SelectedTrainerNameFilter].
-@ProviderFor(SelectedTrainerNameFilter)
-final selectedTrainerNameFilterProvider =
-    AutoDisposeNotifierProvider<SelectedTrainerNameFilter, String?>.internal(
-  SelectedTrainerNameFilter.new,
-  name: r'selectedTrainerNameFilterProvider',
+/// See also [SelectedTrainerNamesFilter].
+@ProviderFor(SelectedTrainerNamesFilter)
+final selectedTrainerNamesFilterProvider = AutoDisposeNotifierProvider<
+    SelectedTrainerNamesFilter, List<String>>.internal(
+  SelectedTrainerNamesFilter.new,
+  name: r'selectedTrainerNamesFilterProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$selectedTrainerNameFilterHash,
+      : _$selectedTrainerNamesFilterHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$SelectedTrainerNameFilter = AutoDisposeNotifier<String?>;
+typedef _$SelectedTrainerNamesFilter = AutoDisposeNotifier<List<String>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

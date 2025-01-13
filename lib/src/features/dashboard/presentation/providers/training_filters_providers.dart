@@ -19,25 +19,34 @@ class SelectedLocationsFilter extends _$SelectedLocationsFilter {
 }
 
 @riverpod
-class SelectedTrainingNameFilter extends _$SelectedTrainingNameFilter {
+class SelectedTrainingNamesFilter extends _$SelectedTrainingNamesFilter {
   @override
-  String? build() {
-    return null;
+  List<String> build() {
+    return [];
   }
 
-  void update(String? value) {
-    state = value;
+  void add(String value) {
+    state = [...state, value];
+  }
+
+  void remove(String value) {
+    state = state.where((element) => element != value).toList();
   }
 }
 
 @riverpod
-class SelectedTrainerNameFilter extends _$SelectedTrainerNameFilter {
+class SelectedTrainerNamesFilter extends _$SelectedTrainerNamesFilter {
   @override
-  String? build() {
-    return null;
+  @override
+  List<String> build() {
+    return [];
   }
 
-  void update(String? value) {
-    state = value;
+  void add(String value) {
+    state = [...state, value];
+  }
+
+  void remove(String value) {
+    state = state.where((element) => element != value).toList();
   }
 }

@@ -2,7 +2,6 @@ import 'package:auzmor_technical_assesment/src/features/dashboard/domain/trainin
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/repositories/training_repository.dart';
-import 'training_filters_providers.dart';
 
 part 'trainings_provider.g.dart';
 
@@ -10,17 +9,7 @@ part 'trainings_provider.g.dart';
 class Trainings extends _$Trainings {
   @override
   Future<List<Training>> build() async {
-    final locationFilters = ref.watch(selectedLocationsFilterProvider);
-
-    final trainings = await ref.watch(trainingRepositoryProvider).getTrainings();
-
-    return trainings.where((training) {
-      if (locationFilters.isNotEmpty) {
-        return locationFilters.contains(training.location);
-      }
-
-      return true;
-    }).toList();
+    return ref.watch(trainingRepositoryProvider).getTrainings();
   }
 }
 
