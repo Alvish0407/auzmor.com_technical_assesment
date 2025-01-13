@@ -22,7 +22,7 @@ class TrainingLocationFilterList extends HookConsumerWidget {
     useEffect(
       () {
         searchedLocations.value = locationFilters.where((location) {
-          return location.contains(searchController.text);
+          return location.toLowerCase().contains(searchController.text.toLowerCase());
         }).toList();
 
         return null;

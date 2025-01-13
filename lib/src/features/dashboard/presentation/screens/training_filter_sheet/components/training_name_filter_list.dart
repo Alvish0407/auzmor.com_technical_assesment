@@ -22,7 +22,7 @@ class TrainingNameFilterList extends HookConsumerWidget {
     useEffect(
       () {
         searchedTrainingNames.value = trainingNameFilters.where((trainingName) {
-          return trainingName.contains(searchController.text);
+          return trainingName.toLowerCase().contains(searchController.text.toLowerCase());
         }).toList();
 
         return null;
