@@ -1,5 +1,7 @@
 # Auzmor Technical Assesment
 
+https://github.com/user-attachments/assets/037fed4d-a987-4409-aa13-e6a382e9185a
+
 <details>
 <summary>Assignmnet</summary>
 
